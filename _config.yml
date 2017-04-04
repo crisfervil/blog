@@ -68,4 +68,8 @@ theme: bootstrap-blog
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/crisfervil/blog.git
+  branch: gh-pages
+  message: "Site Update: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
