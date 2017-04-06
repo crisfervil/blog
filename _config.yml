@@ -65,6 +65,12 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: bootstrap-blog
 
+theme_config: 
+  about_widget_content: >
+    <p>This is my personal blog, where I write about my experiencies in development</p>
+    <p><i class="fa fa-linkedin"></i><a href="#">Linkedin profile</a></p>
+    <p><i class="fa fa-github"><a href="#"></i>Github repo</a></p>
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

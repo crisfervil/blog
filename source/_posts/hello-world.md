@@ -10,3 +10,4 @@ Thank you again
 
 ### Yet another subtitle
 Is important to be nice, so thank you for coming
+{% fa refresh %}
