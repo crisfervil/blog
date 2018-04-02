@@ -231,7 +231,7 @@ public void CreateContact()
 
 If we run the test above, this would be the result:
 
-![EasyRepro Test](images/easyreprotest.gif)
+![EasyRepro Test](images/EasyReproTest.gif)
 
 Now let's analyze the most important parts:
 
