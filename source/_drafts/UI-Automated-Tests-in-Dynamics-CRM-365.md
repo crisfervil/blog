@@ -3,7 +3,7 @@ title: EasyRepro - UI Automated Tests in Dynamics 365
 date: 2018-03-06 17:28:37
 tags:
 ---
-# About User Interface Automated Tests
+# User Interface Automated Tests
 Many, perhaps most, software applications today are written as web-based applications to be run in an Internet browser. The effectiveness of testing these applications varies widely among companies and organizations. In an era of highly interactive and responsive software processes where many organizations are using some form of Agile methodology, test automation is frequently becoming a requirement for software projects. Test automation is often the answer. Test automation means using a software tool to run repeatable tests against the application to be tested. For regression testing this provides that responsiveness.
 
 There are many advantages to test automation. Most are related to the repeatability of the tests and the speed at which the tests can be executed. There are a number of commercial and open source tools available for assisting with the development of test automation. [Selenium](https://www.seleniumhq.org/) is possibly the most widely-used open source solution. 
@@ -296,7 +296,7 @@ var url = xrmBrowser.Entity.GetValue("websiteurl");
 
 # Desirable features in UI Tests
 
-Telemetry Login and screenshots. 
+Telemetry, Logging and screenshots. 
 
 Configurable. Write once, run in multiple platforms.
 
