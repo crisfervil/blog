@@ -19,7 +19,7 @@ There are other alternatives, some of them are tools built on top Selenium, othe
 # When to Automate UI Tests
 It is not always advantageous to automate test cases. There are times when manual testing may be more appropriate. For instance, if the application’s user interface will change considerably in the near future, then any automation might need to be rewritten anyway. Also, sometimes there simply is not enough time to build test automation. For the short term, manual testing may be more effective. If an application has a very tight deadline, there is currently no test automation available, and it’s imperative that the testing get done within that time frame, then manual testing is the best solution.
 
-# About Selenium
+# Selenium
 [Selenium](https://www.seleniumhq.org/) is a set of tools and libraries meant to automate and run different browsers. It has different components, one of which is the WebDriver. 
 
 The [WebDriver](https://www.seleniumhq.org/projects/webdriver/) is a library, very well designed and easy to understand that provides access to the different components and actions that most browsers have available. 
@@ -34,7 +34,7 @@ Even more, how can we make these libraries available to different coding languag
 
 Selenium and the WebDriver tackle above problems providing an elegant API built in several layers. 
 
-# Selenium Example
+# Example
 
 Let's analyze this simple piece of code to see the different elements we are talking about
 
@@ -146,151 +146,20 @@ Assert.Contains("seconds", searchResults.Text);
 ```
 Once I have the reference to the DIV element, I can read and check its contents. 
 
-# About EasyRepro
-
-As you've seen, Selenium is a comprehensive robust tool that will allow you to write User Interface tests for Dynamics CRM. It has all you need, but it becomes quite laborious to write medium and complex tests. 
-
-Every click and form field filling requires a few lines of code. [There are patterns](https://saucelabs.com/blog/selenium-design-patterns) to help you increase the reusability of your tests to the maximum, but still, some tests can be hard and time consuming to write. 
-
-But at the same time Dynamics 365 has a feature that comes in really handy to reduce the amount of code required; every single form, section and field is rendered in the same way, it follows the same structure, and it has a perfectly defined naming convention for UI elements. 
-
-This increases the chances of writing reusable code. If you think about it, given an entity and the list of attributes in it, you know what the URL of a form will be, and how the UI elements are going to be named. If you also know the attribute data types, you know what type of elements (text box, option set, dropdown) are going to be rendered for each attribute.
-
-Well, the clever guys at Microsoft must have came up with the same conclusion, and decided to create a framework for this; it is called [EasyRepro](https://github.com/Microsoft/EasyRepro).
-
-EasyRepro is a library meant to facilitate the writing of UI tests for Dynamics 365, leveraging the well defined structure mentioned above. 
-
-# Creating your first EasyRepro test
-
-Let's see a small example and see how this would work.
-
-First of all, the library is distributed through a nuget package that can be downloaded from here: https://www.nuget.org/packages/Dynamics365.UIAutomation.Api/
+The above code is available on Github. Feel free to send a Pull Request if you see any errors or want to suggest any improvements. You can also clone the repository and run the tests locally if you want to try it yourself.
+https://github.com/crisfervil/EasyReproTest/blob/master/src/EasyReproTest/SeleniumBasicExample.cs
 
 
-```c#
-[Fact]
-public void CreateContact()
-{
-    // 1. Create instance of the browser
-    using (var xrmBrowser = new XrmBrowser(new BrowserOptions() { BrowserType=BrowserType.Chrome }))
-    {
-        var url = new Uri("http://orgname.crm.dynamics.com");
-        var userName = "admin@youruser.onmicrosoft.com".ToSecureString();
-        var pwd = "yourpassword".ToSecureString();
-        // 2. Log-in to Dynamics 365
-        xrmBrowser.LoginPage.Login(url, userName, pwd);
 
-        xrmBrowser.ThinkTime(500);
+# EasyRepro
 
-        // 3. Go to Sales/Accounts using the Sitemap
-        xrmBrowser.Navigation.OpenSubArea("Sales", "Contacts");
+In this first part we covered an introduction of the main elements of the Browser User Interface Test. The next chapter (#Add next chapter link here#) we are going to describe a library built on top of Selenium specifically designed to help us write UI tests for Dynamics CRM. 
 
-        xrmBrowser.ThinkTime(500);
+This library built by Microsoft takes advantage of the well defined structure of Entities, Attributes, SiteMap and all the different elements that are part of the platform.
 
-        // 4. Change the active view
-        xrmBrowser.Grid.SwitchView("Active Contacts");
+Continue reading the second part here: [Add link to the second part here]
 
-        xrmBrowser.ThinkTime(500);
-
-        //5. Click on the "New" button
-        xrmBrowser.CommandBar.ClickCommand("New");
-
-        xrmBrowser.ThinkTime(1000);
-
-        var fields = new List<Field>
-        {
-            new Field() {Id = "firstname", Value = "Test"},
-            new Field() {Id = "lastname", Value = "Contact"}
-        };
-
-        //6. Set the attribute values in the form
-        xrmBrowser.Entity.SetValue(new CompositeControl() { Id = "fullname", Fields = fields });
-        xrmBrowser.Entity.SetValue("emailaddress1", "test@contoso.com");
-        xrmBrowser.Entity.SetValue("mobilephone", "555-555-5555");
-        xrmBrowser.Entity.SetValue("birthdate", DateTime.Parse("11/1/1980"));
-        xrmBrowser.Entity.SetValue(new OptionSet { Name = "preferredcontactmethodcode", Value = "Email" });
-
-        //7. Save the new record
-        xrmBrowser.CommandBar.ClickCommand("Save");
-    }
-}
-```
-
-If we run the test above, this would be the result:
-
-![EasyRepro Test](images/EasyReproTest.gif)
-
-Now let's analyze the most important parts:
-
-```c#
-// 1. Create instance of the browser
-using (var xrmBrowser = new XrmBrowser(new BrowserOptions() { BrowserType=BrowserType.Chrome }))
-```
-This creates an instance of the XrmBrowser, which is the main object that will contain the methods to interact with Dynamics. This is also the main difference with normal Selenium tests; I no longer need to create a specific WebDriver object for each browser type. EasyRepro sets this XrmBrowser object which will do all the job for us. I only need to specify what Browser I want to run against as a parameter in the constructor. 
-
-This value along with the url and user credentials, can and must ne read from a configuration source, like the app.config file.
-
-```c#
-// 2. Log-in to Dynamics 365
-xrmBrowser.LoginPage.Login(url, userName, pwd);
-```
-This is just how we tell to the Browser we want to perform the necessary steps to log in into the application. 
-
-Again, this is the cool part of EasyRepro. Given that the Login page, its URL and all the UI elements are the same for any given CRM Online instance, I can encapsulate all of the logic for performing that interaction in a function, and just use it providing the relevant information. In this case, the url, user and password. 
-
-```c#
-// 3. Go to Sales/Accounts using the Sitemap
-xrmBrowser.Navigation.OpenSubArea("Sales", "Contacts");
-```
-
-It's the same story here. The navigation and the sitemap are made of several UI elements, and in order to click on any of them I need to know how's that structure rendered and how are its parts glue together. With EasyRepro, I only need to provide what's relevant. That I want to click on the **Sales** area of the site map and the **Contacts** section of it. EasyRepro will take care of the rest. 
-
-```c#
-// 4. Change the active view
-xrmBrowser.Grid.SwitchView("Active Contacts");
-```
-After clicking on the desired sitemap item, the browser will navigate to the main view of the contacts entity. The main view can be the default one, which may or may not ne the one that I want to use, so with the line above, I make sure that view is selected. 
-
-```c#
-//5. Click on the "New" button
-xrmBrowser.CommandBar.ClickCommand("New");
-```
-The CommandBar object provides the ClickCommand method to interact with the Ribbons. In this case, we provide the Text on the button we want to click in. It also works with dropdown buttons.
-
-```c#
-//6. Set the attribute values in the form
-xrmBrowser.Entity.SetValue(new CompositeControl() { Id = "fullname", Fields = fields });
-xrmBrowser.Entity.SetValue("emailaddress1", "test@contoso.com");
-```
-Now comes the interesting stuff. Where we set the values of the record. The account entity is a good example of interaction with composite fields, where the name in this case is made of other parts. 
-
-```c#
-//7. Save the new record
-xrmBrowser.CommandBar.ClickCommand("Save");
-```
-And finally, as we've seen before, we can use the CommandBar object to click on the **Save** button.
-
-And now what?
-
-The next step in this test should be to check the status of the records. The usual requirement when creating a record is to set some values by default, so we would like to make sure these fields were populated correctly. 
-
-The way to do it is through the normal Assert methods available in any test framework. 
-
-In order to read the value of an attribute you would need something like
-```c#
-var url = xrmBrowser.Entity.GetValue("websiteurl");
-``` 
-
-# Desirable features in UI Tests
-
-Telemetry, Logging and screenshots. 
-
-Configurable. Write once, run in multiple platforms.
 
 # References
-https://msdn.microsoft.com/en-us/library/dd286726.aspx
-https://www.seleniumhq.org/docs/01_introducing_selenium.jsp
-https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing
-http://toolsqa.com/selenium-c-sharp/
-https://www.codeproject.com/Articles/1016775/Getting-Started-with-WebDriver-Csharp-in-Minutes
-https://crmtipoftheday.com/967/ui-testing-for-dynamics-365/
+- https://msdn.microsoft.com/en-us/library/dd286726.aspx
+- https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing
