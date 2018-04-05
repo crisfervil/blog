@@ -39,47 +39,34 @@ Selenium and the WebDriver tackle above problems providing an elegant API built 
 Let's analyze this simple piece of code to see the different elements we are talking about
 
 ``` c#
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-// 1. Reference the Chrome Driver Library
-using OpenQA.Selenium.Chrome;
-
-namespace SeleniumExample
+[Fact]
+public void GoogleSearch()
 {
- [TestClass]
- public class ChromeExamples
- {
-  [TestMethod]
-  public void GoogleSearch()
-  {
-   // 2. Initialize the Driver
-   using(var driver = new ChromeDriver())
-   {
-    // 3. Go to the "Google" homepage
-    driver.Navigate().GoToUrl("http://www.google.com");
+    // 1. Initialize the Driver
+    using (var driver = new ChromeDriver())
+    {
+        // 2. Go to the "Google" homepage
+        driver.Navigate().GoToUrl("http://www.google.com");
 
-    // 4. Find the search box on the page
-    var searchBox = driver.FindElementById("lst-ib");
+        // 3. Find the search box on the page
+        var searchBox = driver.FindElementById("lst-ib");
 
-    // 5. Enter the text to search for
-    searchBox.SendKeys("Selenium Test");
+        // 4. Enter the text to search for
+        searchBox.SendKeys("Selenium Test");
 
-    // 6. Find the search button
-    var searchButton = driver.FindElementByName("btnK");
+        // 5. Find the search button
+        var searchButton = driver.FindElementByName("btnK");
 
-    // 7. Click on it to start the search
-    searchButton.Submit();
+        // 6. Click on it to start the search
+        searchButton.Submit();
 
-    // 8. Find the "Id" of the "Div" containing results stats,
-    // located just above the results table.
-    var searchResults = driver.FindElementById("resultStats");
-    
-    // 9. TODO: Perform any operations to make sure the behavior is correct 
-    StringAssert.Contains(searchResults.Text(), "seconds");
+        // 7. Find the "Id" of the "Div" containing results stats,
+        // located just above the results table.
+        var searchResults = driver.FindElementById("resultStats");
 
-   }
-  }
- }
+        // 8. TODO: Perform any operations to make sure the behavior is correct 
+        Assert.Contains("seconds", searchResults.Text);
+    }
 }
 ```
 
@@ -87,17 +74,17 @@ First of all, Selenium is available to be coded using different languages. Each 
 
 Let's move onto analyzing the code. In summary, what this code does is opening a Chrome browser window, navigate to the google page and perform a search. Easy, right?
 
+If I run the test above I get the following result:
+
+![Selenium execution result](images/SeleniumBasicTest.gif)
+
 ```c#
-// 1. Reference the Chrome Driver Library
-using OpenQA.Selenium.Chrome;
+// 1. Initialize the Driver
+using(var driver = new ChromeDriver())
 ```
 This is how you tell Visual Studio you want to automate the **Chrome** Browser. If we wanted to automate other browsers, there are specific namespaces for them.
 
-```c#
-// 2. Initialize the Driver
-using(var driver = new ChromeDriver())
-```
-This is the line where you initialize and get the object that will let you interact with Chrome. 
+The line initializes and gets the object that will let you interact with Chrome. 
 
 But wait, didn't we say before that I am able to write a test and run it in different browsers and operating systems? 
 Why do I need to reference Chrome specifically? 
@@ -107,13 +94,13 @@ There is in fact a way to initialize a generic browser and only specify which pa
 For the sake of simplicity, I'm creating a specific reference to Chrome, but the same concepts apply to the other available drivers. 
 
 ```c#
-// 3. Go to the "Google" homepage
+// 2. Go to the "Google" homepage
 driver.Navigate().GoToUrl("http://www.google.com");
 ```
 This is how we tell the browser to go an type a web address in the navigation bar and hit enter. 
 
-```
-// 4. Find the search box on the page
+```c#
+// 3. Find the search box on the page
 var searchBox = driver.FindElementById("lst-ib");
 ```
 Here we are saying, go find me the search text box. 
@@ -121,19 +108,19 @@ If we were testing any other type of application, for instance a record form, th
 If that text box that is not available, because is hidden, or it wasn't rendered, an error will be thrown and the test will fail. 
 
 ```c#
-// 5. Enter the text to search for
+// 4. Enter the text to search for
 searchBox.SendKeys("Selenium Test");
 ```
 Once we got the text box, we can type any value we want on it.
 
 ```c#
-// 6. Find the search button
+// 5. Find the search button
 var searchButton = driver.FindElementByName("btnK");
 ```
 The same way we had to find the search box, now we have to find the search button. This is a very common pattern in Selenium. You first search for the UI element you want to interact with, and then perform the interaction, for instance typing something, clicking on it, swipe, select a value from a drop-down list, or do whatever you need to. Every type of UI element offer different type of interactions.
 
 ```c#
-// 7. Click on it to start the search
+// 6. Click on it to start the search
 searchButton.Submit();
 ```
 And Click on it. At this stage, the browser will connect to the server, send a request and render the results. Even though this sometimes happens very fast, especially in the Google search, it takes some time. 
@@ -145,7 +132,7 @@ Sometimes, this is not enough, and we need to wait longer.
 For those cases, there are other available API functions exposed to perform waits.
 
 ```c#
-// 8. Find the "Id" of the "Div" containing results stats,
+// 7. Find the "Id" of the "Div" containing results stats,
 // located just above the results table.
 var searchResults = driver.FindElementById("resultStats");
 ```
@@ -154,8 +141,8 @@ At this point, I can use the normal Assert methods available in any test framewo
 The way I make sure the page has the right values or the correct state is by the mechanism explained in #4: Search the page UI element, then get the contained value. 
 
 ```c#
-// 9. TODO: Perform any operations to make sure the behavior is correct 
-StringAssert.Contains(searchResults.Text(), "seconds");
+// 8. TODO: Perform any operations to make sure the behavior is correct 
+Assert.Contains("seconds", searchResults.Text);
 ```
 Once I have the reference to the DIV element, I can read and check its contents. 
 
@@ -171,7 +158,7 @@ This increases the chances of writing reusable code. If you think about it, give
 
 Well, the clever guys at Microsoft must have came up with the same conclusion, and decided to create a framework for this; it is called [EasyRepro](https://github.com/Microsoft/EasyRepro).
 
-EasyRepo is a library meant to facilitate the writing of UI tests for Dynamics 365, leveraging the well defined structure mentioned above. 
+EasyRepro is a library meant to facilitate the writing of UI tests for Dynamics 365, leveraging the well defined structure mentioned above. 
 
 # Creating your first EasyRepro test
 
