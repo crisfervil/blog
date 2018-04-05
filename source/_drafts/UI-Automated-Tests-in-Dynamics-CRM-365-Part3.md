@@ -6,6 +6,10 @@ tags:
 
 https://github.com/Microsoft/EasyRepro/blob/releases/v9.0/Microsoft.Dynamics365.UIAutomation.Sample/GlobalSearch.cs
 
+# Test Asynchronous Plugins
+
+Proposal of how to check the result of async plugins triggered during the UI test
+
 # Desirable features in UI Tests
 
 Telemetry, Logging and screenshots. 
