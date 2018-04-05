@@ -1,5 +1,5 @@
 ---
-title: EasyRepro - UI Automated Tests in Dynamics 365
+title: EasyRepro - UI Automated Tests in Dynamics 365 - Part 1
 date: 2018-03-06 17:28:37
 tags:
 ---
