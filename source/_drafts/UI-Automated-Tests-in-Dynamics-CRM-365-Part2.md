@@ -45,7 +45,7 @@ public void CreateContact()
 
         xrmBrowser.ThinkTime(500);
 
-        // 3. Go to Sales/Accounts using the Sitemap
+        // 3. Go to Sales/Contacts using the Sitemap
         xrmBrowser.Navigation.OpenSubArea("Sales", "Contacts");
 
         xrmBrowser.ThinkTime(500);
@@ -102,7 +102,7 @@ This is just how we tell to the Browser we want to perform the necessary steps t
 Again, this is the cool part of EasyRepro. Given that the Login page, its URL and all the UI elements are the same for any given CRM Online instance, I can encapsulate all of the logic for performing that interaction in a function, and just use it providing the relevant information. In this case, the url, user and password. 
 
 ```c#
-// 3. Go to Sales/Accounts using the Sitemap
+// 3. Go to Sales/Contacts using the Sitemap
 xrmBrowser.Navigation.OpenSubArea("Sales", "Contacts");
 ```
 
@@ -125,7 +125,7 @@ The CommandBar object provides the ClickCommand method to interact with the Ribb
 xrmBrowser.Entity.SetValue(new CompositeControl() { Id = "fullname", Fields = fields });
 xrmBrowser.Entity.SetValue("emailaddress1", "test@contoso.com");
 ```
-Now comes the interesting stuff. Where we set the values of the record. The account entity is a good example of interaction with composite fields, where the name in this case is made of other parts. 
+Now comes the interesting stuff, where we set the values of the record. The contact entity is a good example of interaction with composite fields, where the name in this case is made of other parts. 
 
 ```c#
 //7. Save the new record
@@ -135,7 +135,7 @@ And finally, as we've seen before, we can use the **CommandBar** object to click
 
 And now what?
 
-The next step in this test should be to check the status of the records. The usual requirement when creating a record is to set some values by default, so we would like to make sure these fields were populated correctly. 
+The next step in this test should be to check the status of the records. The usual requirement when creating a record is to set some calculated values by default, so the goal of the tests probably should be to make sure these fields were populated correctly. 
 
 The way to do it is through the normal Assert methods available in any test framework. 
 
@@ -143,6 +143,7 @@ In order to read the value of an attribute you would need something like
 ```c#
 var url = xrmBrowser.Entity.GetValue("websiteurl");
 ``` 
+And then, perform an Assert to make sure the url has the value we expect.
 
 The above code is available on Github. Feel free to send a Pull Request if you see any errors or want to suggest any improvements. You can also clone the repository and run the tests locally if you want to try it yourself.
 https://github.com/crisfervil/EasyReproTest/blob/master/src/EasyReproTest/ContactTests.cs

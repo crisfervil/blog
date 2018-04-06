@@ -72,21 +72,21 @@ public void GoogleSearch()
 
 First of all, Selenium is available to be coded using different languages. Each language/platform require you to download and reference the appropriate libraries. In this case, we are using Selenium for c# which is available as a nuget package for Visual Studio. You can download it from here: https://www.nuget.org/packages/Selenium.WebDriver/
 
-Let's move onto analyzing the code. In summary, what this code does is opening a Chrome browser window, navigate to the google page and perform a search. Easy, right?
-
 If I run the test above I get the following result:
 
 ![Selenium execution result](images/SeleniumBasicTest.gif)
+
+Let's move onto analyzing the code. In summary, what this code does is opening a Chrome browser window, navigate to the Google page and perform a search. Easy, right?
 
 ```c#
 // 1. Initialize the Driver
 using(var driver = new ChromeDriver())
 ```
-This is how you tell Visual Studio you want to automate the **Chrome** Browser. If we wanted to automate other browsers, there are specific namespaces for them.
+This is how you tell Visual Studio you want to automate the **Chrome** Browser. If we wanted to automate other browsers, there are specific Objects for them.
 
-The line initializes and gets the object that will let you interact with Chrome. 
+The line above initializes and gets the object that will let you interact with Chrome. 
 
-But wait, didn't we say before that I am able to write a test and run it in different browsers and operating systems? 
+But wait, didn't we say before that we are able to write a test and run it in different browsers and operating systems? 
 Why do I need to reference Chrome specifically? 
 What if I want to run the same test in Internet Explorer? Do I need to write the same test again?
 
@@ -123,8 +123,8 @@ The same way we had to find the search box, now we have to find the search butto
 // 6. Click on it to start the search
 searchButton.Submit();
 ```
-And Click on it. At this stage, the browser will connect to the server, send a request and render the results. Even though this sometimes happens very fast, especially in the Google search, it takes some time. 
-If I perform the next step of the script immediately after clicking the button, the UI elements may not be present just yet, and my test would fail. 
+And Click on it. At this stage, the browser will connect to the server, send a request and render the results. Even though this sometimes happens very fast, especially in the Google search, it takes certain amount of time. 
+If I perform the next activity on the test immediately after clicking the button, the UI elements may not be present just yet, and my test would fail. 
 So, how do I make sure the page code has finished rendering or performing the operations before I continue running the tests?
 
 Selenium provides a waiting mechanism that is transparent, but configurable. Every time it detects the browser is performing a task, like a server request, it waits until it is completed before moving to the next step. 
