@@ -18,20 +18,36 @@ In this part, we are going to see another example, and discuss some desirable fe
 https://github.com/Microsoft/EasyRepro/blob/releases/v9.0/Microsoft.Dynamics365.UIAutomation.Sample/GlobalSearch.cs
 
 ``` c#
-    [TestMethod]
-    public void WEBTestGlobalSearch()
+    [Fact]
+    public void GlobalSearchTest()
     {
-        using (var xrmBrowser = new Api.Browser(TestSettings.Options))
+        // 1 - Create instance of the browser
+        using (var xrmBrowser = new Browser(BrowserType.Chrome))
         {
-            xrmBrowser.LoginPage.Login(_xrmUri, _username, _password);
+            var url = new Uri("http://orgname.crm.dynamics.com");
+            var userName = "admin@youruser.onmicrosoft.com".ToSecureString();
+            var pwd = "yourpassword".ToSecureString();
+
+            // 2. Log-in to Dynamics 365
+            xrmBrowser.LoginPage.Login(url, userName, pwd);
+
+            // 3 - Close Guided Help
             xrmBrowser.GuidedHelp.CloseGuidedHelp();
 
+            // 4 - Wait for it
             xrmBrowser.ThinkTime(500);
 
+            // 5 - Perform the search from the navigation bar
             xrmBrowser.Navigation.GlobalSearch("contoso");
 
+            // 6 - Perform the search from the search page
             xrmBrowser.GlobalSearch.Search("Contoso");
+
             xrmBrowser.ThinkTime(4000);
+
+            // Other functionality available in Global Search
+            xrmBrowser.GlobalSearch.FilterWith("account");
+            xrmBrowser.GlobalSearch.OpenRecord("account",1);
         }
     }
 ```
