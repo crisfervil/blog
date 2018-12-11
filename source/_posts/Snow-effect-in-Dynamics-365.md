@@ -7,13 +7,19 @@ tags:
 
 So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. 
 
-And because we are D365 hackers and we can't help being obsessed with our work, we have to focus that energy to produce something different and really useful. 
+And because we are D365 hackers and we can't help being obsessed with our work, we have to focus that energy to produce something different and really *useful*. 
 
-Today, a small hack to bring the winter atmosphere to our deployments: *The snow effect*.
+Today, a small hack to bring the Christmas winter atmosphere to our deployments: *The snow effect*.
 
 Based on Scott Schiller snow storm project:  https://github.com/scottschiller/snowstorm/
 
-![Vanilla CRM Screen](images/SnowEffect/Capture01.gif)
+This trick works well on on-line instances. I haven't tested it on an on-premise, but there is no reason why it shouldn't work. 
+
+I haven't tested it on Internet Explorer or Firefox either. It works well on Chrome and Edge.
+
+**Disclaimer**: Of course this is an **un**supported customization and it must not be done in production. Do it on your DEV environments with the sole purpose of amusing your developer fellows. 
+
+![Snow Effect](images/SnowEffect/Capture01.gif)
 
 ## Steps
 
@@ -35,13 +41,12 @@ This is the hacking part, and of course you can apply the same idea to get other
 
 ![Developer Tools Web Resources](images/SnowEffect/Capture02.png)
 
-In this example, the victim can be the LoadGuidedHelp.js highlighted in the screenshot. 
+In this example, the victim can be the *LoadGuidedHelp.js* highlighted in the screenshot. 
 
 3 - Open the Default Solution, and find the web resource above by filtering the webresources view
 
 ![Web Resources view](images/SnowEffect/Capture03.png)
 
-**Disclaimer**: Of course this is a not supported customization and it must not be done in production. Do it on your DEV environments with the sole purpose of amusing your developer fellows. 
 
 4 - Add the following piece of code to the file, to call our snow effect file
 
