@@ -106,4 +106,4 @@ And voila! The snow effect works nicely on the Unified Interface too!
 
 Happy Hacking Christmas!
 
-This post was first published on (http://blog.crisfervil.com/2018/12/06/Snow-effect-in-Dynamics-365/)
+This post was first published on http://blog.crisfervil.com/2018/12/06/Snow-effect-in-Dynamics-365/
