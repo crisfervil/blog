@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cristhian Fernandez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Blog about my experiences in software development">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cristhian Fernandez">
+<meta property="og:url" content="https://blog.crisfervil.com/index.html">
+<meta property="og:site_name" content="Cristhian Fernandez">
+<meta property="og:description" content="Blog about my experiences in software development">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Cristhian Fernandez">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Cristhian Fernandez" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class="active"
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Cristhian Fernandez</h1>
+  
+    <p class="lead blog-description">My brain backup</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          
+  
+    <article id="post-Snow-effect-in-Dynamics-365" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/06/Snow-effect-in-Dynamics-365/">Snow effect in Dynamics 365</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/12/06/Snow-effect-in-Dynamics-365/" class="article-date"><time datetime="2018-12-06T20:28:21.000Z" itemprop="datePublished">2018-12-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Snow-Effect-in-Dynamics-365"><a href="#Snow-Effect-in-Dynamics-365" class="headerlink" title="Snow Effect in Dynamics 365"></a>Snow Effect in Dynamics 365</h1><p>So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. </p>
+<p>And because we are D365 hackers and we can’t help being obsessed with our work, we have to focus that energy to produce something different and really <em>useful</em>. </p>
+<p>Today, a small hack to bring the Christmas winter atmosphere to our deployments: <em>The snow effect</em>.</p>
+<p>Based on Scott Schiller snow storm project:  <a href="https://github.com/scottschiller/snowstorm/" target="_blank" rel="noopener">https://github.com/scottschiller/snowstorm/</a></p>
+<p>This trick works well on on-line instances. I haven’t tested it on an on-premise, but there is no reason why it shouldn’t work. </p>
+<p>I haven’t tested it on Internet Explorer or Firefox either. It works well on Chrome and Edge.</p>
+<p><strong>Disclaimer</strong>: Of course this is an <strong>un</strong>supported customization and it must not be done in production. Do it on your DEV environments with the sole purpose of amusing your developer fellows. </p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture01.gif" class="" title="Snow Effect">
+
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p>1 - Create a web resource called new_snow.js in your instance</p>
+<p>Copy and paste the code available on <a href="https://raw.githubusercontent.com/scottschiller/Snowstorm/master/snowstorm.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/scottschiller/Snowstorm/master/snowstorm.js</a></p>
+<p>You will see that the script contains some snow properties on the top of the file that can be configured.</p>
+<p>Adjust the <strong>snowColor</strong> to something like <code>&#39;lightblue&#39;</code> or <code>&#39;#9dd0e1&#39;</code>. The vanilla CRM background is completely white, so white on white doesn’t work. </p>
+<p>Also, you have to change the <strong>freezeOnBlur</strong> property, because all the CRM UI is based on IFRAMES, and this property stops the snow effect when the container IFRAME doesn’t have the focus. </p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture04.png" class="" title="Snow Effect configuration">
+
+
+<p>2 - Find a suitable web resource to call the above script from by hitting F12 and checking the web resources loaded on the top IFRAME.</p>
+<p>This is the hacking part, and of course you can apply the same idea to get other results. </p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture02.png" class="" title="Developer Tools Web Resources">
+
+
+<p>In this example, the victim can be the <em>LoadGuidedHelp.js</em> highlighted in the screenshot. </p>
+<p>3 - Open the Default Solution, and find the web resource above by filtering the webresources view</p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture03.png" class="" title="Web Resources view">
+
+
+<p>4 - Add the following piece of code to the file, to call our snow effect file</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// snow script. remove after Christmas</span></span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">"/webresources/new_snow.js"</span>;</span><br><span class="line"><span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line"><span class="comment">// end snow script</span></span><br></pre></td></tr></table></figure>
+<p>The modified file will look something like…</p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture05.png" class="" title="Modified CRM file">
+
+
+<p>And you are done! You can update some other properties to customize the snow storm according to your preferences. Something you can do is increase the number and the size of the snow flakes. </p>
+<h2 id="Update-for-Unified-Interface"><a href="#Update-for-Unified-Interface" class="headerlink" title="Update for Unified Interface"></a>Update for Unified Interface</h2><p>We are in 2018 and the Unified Interface is here! so, we want the Christmas spirit to get there too!</p>
+<p>To make this work on the new UI you need to repeat step #2 in the Unified Interface and find a different victim. </p>
+<p>You can choose literally any file under the WebResources folder, but it seems appropriate to use the mscommon.js file. </p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture06.png" class="" title="Developer Tools Web Resources">
+
+
+<p>Add the same piece of code added in step #4</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// snow script. remove after Christmas</span></span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">"/webresources/new_snow.js"</span>;</span><br><span class="line"><span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line"><span class="comment">// end snow script</span></span><br></pre></td></tr></table></figure>
+
+<p>The modified file will look something like…</p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture07.png" class="" title="Modified CRM file">
+
+<p>Last but not least, there is a small correction required on the <strong>new_snow.js</strong> file. For some reason, in the Unified Interface, the window.onload event is not triggered the way the script expects and the line highlighted below just doesn’t work.</p>
+<p>So, find the autostart line and comment it all out. </p>
+<p>Add instead the following code:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.setTimeout(doStart, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture08.png" class="" title="Modified CRM file">
+
+<p>And voila! The snow effect works nicely on the Unified Interface too!</p>
+<img src="/2018/12/06/Snow-effect-in-Dynamics-365/Capture09.gif" class="" title="Snow Effect Capture">
+
+
+<p>Happy Hacking Christmas!</p>
+<p>This post was first published on <a href="http://blog.crisfervil.com/2018/12/06/Snow-effect-in-Dynamics-365/">http://blog.crisfervil.com/2018/12/06/Snow-effect-in-Dynamics-365/</a></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://blog.crisfervil.com/2018/12/06/Snow-effect-in-Dynamics-365/" data-id="ck8wz3vij0001kke12xqoflnu" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/1982/02/17/Hello-World/">Hello World</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/1982/02/17/Hello-World/" class="article-date"><time datetime="1982-02-17T09:00:00.000Z" itemprop="datePublished">1982-02-17</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="This-is-a-Test"><a href="#This-is-a-Test" class="headerlink" title="This is a Test"></a>This is a Test</h1><p>Thanks visiting this blog</p>
+<h2 id="This-is-another-test"><a href="#This-is-another-test" class="headerlink" title="This is another test"></a>This is another test</h2><p>Thank you again</p>
+<h3 id="Yet-another-subtitle"><a href="#Yet-another-subtitle" class="headerlink" title="Yet another subtitle"></a>Yet another subtitle</h3><p>Is important to be nice, so thank you for coming</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://blog.crisfervil.com/1982/02/17/Hello-World/" data-id="ck8wzanfq0000ike1gpzyaxan" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>This is my personal blog, where I write about my experiencies in development</p> <p><i class="fa fa-linkedin"></i><a href="#">Linkedin profile</a></p> <p><i class="fa fa-github"><a href="#"></i>Github repo</a></p>
+
+</div>
+
+
+  
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/1982/02/">February 1982</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2018/12/06/Snow-effect-in-Dynamics-365/">Snow effect in Dynamics 365</a>
+        </li>
+      
+        <li>
+          <a href="/1982/02/17/Hello-World/">Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Cristhian Fernandez<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
