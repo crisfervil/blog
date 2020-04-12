@@ -19,7 +19,7 @@ I haven't tested it on Internet Explorer or Firefox either. It works well on Chr
 
 **Disclaimer**: Of course this is an **un**supported customization and it must not be done in production. Do it on your DEV environments with the sole purpose of amusing your developer fellows. 
 
-![Snow Effect](images/SnowEffect/Capture01.gif)
+{% asset_img Capture01.gif Snow Effect %}
 
 ## Steps
 
@@ -33,19 +33,21 @@ Adjust the **snowColor** to something like ```'lightblue'``` or ```'#9dd0e1'```.
 
 Also, you have to change the **freezeOnBlur** property, because all the CRM UI is based on IFRAMES, and this property stops the snow effect when the container IFRAME doesn't have the focus. 
 
-![Snow Effect configuration](images/SnowEffect/Capture04.png)
+{% asset_img Capture04.png Snow Effect configuration %}
+
 
 2 - Find a suitable web resource to call the above script from by hitting F12 and checking the web resources loaded on the top IFRAME.
 
 This is the hacking part, and of course you can apply the same idea to get other results. 
 
-![Developer Tools Web Resources](images/SnowEffect/Capture02.png)
+{% asset_img Capture02.png Developer Tools Web Resources %}
+
 
 In this example, the victim can be the *LoadGuidedHelp.js* highlighted in the screenshot. 
 
 3 - Open the Default Solution, and find the web resource above by filtering the webresources view
 
-![Web Resources view](images/SnowEffect/Capture03.png)
+{% asset_img Capture03.png Web Resources view %}
 
 
 4 - Add the following piece of code to the file, to call our snow effect file
@@ -59,7 +61,7 @@ document.head.appendChild(script);
 ```
 The modified file will look something like...
 
-![Modified CRM file](images/SnowEffect/Capture05.png)
+{% asset_img Capture05.png Modified CRM file %}
 
 
 And you are done! You can update some other properties to customize the snow storm according to your preferences. Something you can do is increase the number and the size of the snow flakes. 
@@ -72,7 +74,8 @@ To make this work on the new UI you need to repeat step #2 in the Unified Interf
 
 You can choose literally any file under the WebResources folder, but it seems appropriate to use the mscommon.js file. 
 
-![Developer Tools Web Resources](images/SnowEffect/Capture06.png)
+{% asset_img Capture06.png Developer Tools Web Resources %}
+
 
 Add the same piece of code added in step #4
 
@@ -86,7 +89,7 @@ document.head.appendChild(script);
 
 The modified file will look something like...
 
-![Modified CRM file](images/SnowEffect/Capture07.png)
+{% asset_img Capture07.png Modified CRM file %}
 
 Last but not least, there is a small correction required on the **new_snow.js** file. For some reason, in the Unified Interface, the window.onload event is not triggered the way the script expects and the line highlighted below just doesn't work.
 
@@ -96,12 +99,12 @@ Add instead the following code:
 ``` js
   window.setTimeout(doStart, 2000);
 ```
-![Modified CRM file](images/SnowEffect/Capture08.png)
 
+{% asset_img Capture08.png Modified CRM file %}
 
 And voila! The snow effect works nicely on the Unified Interface too!
 
-![Snow Effect Capture](images/SnowEffect/Capture09.gif)
+{% asset_img Capture09.gif Snow Effect Capture %}
 
 
 Happy Hacking Christmas!

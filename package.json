@@ -1,26 +1,30 @@
 {
-  "name": "hexo-site",
+  "name": "crisfervil-blog",
   "version": "0.0.0",
   "private": true,
-  "hexo": {
-    "version": "3.6.0"
-  },
   "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server",
     "create-cname": "echo blog.crisfervil.com > themes/bootstrap-blog/source/CNAME",
     "install-template": "git clone https://github.com/cgmartin/hexo-theme-bootstrap-blog.git themes/bootstrap-blog & npm run create-cname",
-    "update-template": "cd themes/bootstrap-blog & git pull"
+    "update-template": "cd themes/bootstrap-blog & git pull"    
+  },
+  "hexo": {
+    "version": "4.2.0"
   },
   "dependencies": {
-    "hexo": "^3.2.0",
-    "hexo-deployer-git": "^0.2.0",
-    "hexo-generator-archive": "^0.1.4",
-    "hexo-generator-category": "^0.1.3",
-    "hexo-generator-index": "^0.2.0",
-    "hexo-generator-tag": "^0.2.0",
-    "hexo-renderer-ejs": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.10",
-    "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0",
+    "hexo": "^4.0.0",
+    "hexo-deployer-git": "^2.1.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^1.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-server": "^1.0.0",
     "hexo-tag-fontawesome": "^1.0.0"
   }
 }
