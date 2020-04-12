@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>EasyRepro - UI Automated Tests in Dynamics 365 - Part 2 | Cristhian Fernandez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IntroThis is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EasyRepro - UI Automated Tests in Dynamics 365 - Part 2">
+<meta property="og:url" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/index.html">
+<meta property="og:site_name" content="Cristhian Fernandez">
+<meta property="og:description" content="IntroThis is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenie">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/EasyReproTest.gif">
+<meta property="article:published_time" content="2018-03-06T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-12T13:40:27.015Z">
+<meta property="article:author" content="Cristhian Fernandez">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/EasyReproTest.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="Cristhian Fernandez" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Cristhian Fernandez</h1>
+  
+    <p class="lead blog-description">Professional Blog</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      EasyRepro - UI Automated Tests in Dynamics 365 - Part 2
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/" class="article-date"><time datetime="2018-03-06T00:00:00.000Z" itemprop="datePublished">2018-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. </p>
+<p>The <a href="/2018/03/05/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1/" title="first part">first part</a> describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about <a href="https://www.seleniumhq.org/" target="_blank" rel="noopener">Selenium</a>, probably the most popular and robust tool available for Browser UI automation. </p>
+<p>In this part we are describing EasyRepro, a library built by Microsoft that leverages all the power provided by Selenium and takes advantage of the well defined structure of components in Dynamics 365.</p>
+<h1 id="EasyRepro"><a href="#EasyRepro" class="headerlink" title="EasyRepro"></a>EasyRepro</h1><p>As you’ve seen, Selenium is a comprehensive robust tool that will allow you to write User Interface tests for Dynamics CRM. It has all you need, but it becomes quite laborious to write medium and complex tests. </p>
+<p>Every click and form field filling requires a few lines of code. <a href="https://saucelabs.com/blog/selenium-design-patterns" target="_blank" rel="noopener">There are patterns</a> to help you increase the reusability of your tests to the maximum, but still, some tests can be hard and time consuming to write. </p>
+<p>But at the same time Dynamics 365 has a feature that comes in really handy to reduce the amount of code required; every single form, section and field is rendered in the same way, it follows the same structure, and it has a perfectly defined naming convention for UI elements. </p>
+<p>This increases the chances of writing reusable code. If you think about it, given an entity and the list of attributes in it, you know what the URL of a form will be, and how the UI elements are going to be named. If you also know the attribute data types, you know what type of elements (text box, option set, dropdown) are going to be rendered for each attribute.</p>
+<p>Well, the clever guys at Microsoft must have came up with the same conclusion, and decided to create a framework for this; it is called <a href="https://github.com/Microsoft/EasyRepro" target="_blank" rel="noopener">EasyRepro</a>.</p>
+<p>EasyRepro is a library meant to facilitate the writing of UI tests for Dynamics 365, leveraging the well defined structure mentioned above. </p>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><p>Let’s see a small example and see how this would work.</p>
+<p>First of all, the library is distributed through a nuget package that can be downloaded from here: <a href="https://www.nuget.org/packages/Dynamics365.UIAutomation.Api/" target="_blank" rel="noopener">https://www.nuget.org/packages/Dynamics365.UIAutomation.Api/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">[Fact]</span><br><span class="line">public void CreateContact()</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; 1. Create instance of the browser</span><br><span class="line">    using (var xrmBrowser &#x3D; new XrmBrowser(new BrowserOptions() &#123; BrowserType&#x3D;BrowserType.Chrome &#125;))</span><br><span class="line">    &#123;</span><br><span class="line">        var url &#x3D; new Uri(&quot;http:&#x2F;&#x2F;orgname.crm.dynamics.com&quot;);</span><br><span class="line">        var userName &#x3D; &quot;admin@youruser.onmicrosoft.com&quot;.ToSecureString();</span><br><span class="line">        var pwd &#x3D; &quot;yourpassword&quot;.ToSecureString();</span><br><span class="line">        &#x2F;&#x2F; 2. Log-in to Dynamics 365</span><br><span class="line">        xrmBrowser.LoginPage.Login(url, userName, pwd);</span><br><span class="line"></span><br><span class="line">        xrmBrowser.ThinkTime(500);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 3. Go to Sales&#x2F;Contacts using the Sitemap</span><br><span class="line">        xrmBrowser.Navigation.OpenSubArea(&quot;Sales&quot;, &quot;Contacts&quot;);</span><br><span class="line"></span><br><span class="line">        xrmBrowser.ThinkTime(500);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 4. Change the active view</span><br><span class="line">        xrmBrowser.Grid.SwitchView(&quot;Active Contacts&quot;);</span><br><span class="line"></span><br><span class="line">        xrmBrowser.ThinkTime(500);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;5. Click on the &quot;New&quot; button</span><br><span class="line">        xrmBrowser.CommandBar.ClickCommand(&quot;New&quot;);</span><br><span class="line"></span><br><span class="line">        xrmBrowser.ThinkTime(1000);</span><br><span class="line"></span><br><span class="line">        var fields &#x3D; new List&lt;Field&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            new Field() &#123;Id &#x3D; &quot;firstname&quot;, Value &#x3D; &quot;Test&quot;&#125;,</span><br><span class="line">            new Field() &#123;Id &#x3D; &quot;lastname&quot;, Value &#x3D; &quot;Contact&quot;&#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;6. Set the attribute values in the form</span><br><span class="line">        xrmBrowser.Entity.SetValue(new CompositeControl() &#123; Id &#x3D; &quot;fullname&quot;, Fields &#x3D; fields &#125;);</span><br><span class="line">        xrmBrowser.Entity.SetValue(&quot;emailaddress1&quot;, &quot;test@contoso.com&quot;);</span><br><span class="line">        xrmBrowser.Entity.SetValue(&quot;mobilephone&quot;, &quot;555-555-5555&quot;);</span><br><span class="line">        xrmBrowser.Entity.SetValue(&quot;birthdate&quot;, DateTime.Parse(&quot;11&#x2F;1&#x2F;1980&quot;));</span><br><span class="line">        xrmBrowser.Entity.SetValue(new OptionSet &#123; Name &#x3D; &quot;preferredcontactmethodcode&quot;, Value &#x3D; &quot;Email&quot; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;7. Save the new record</span><br><span class="line">        xrmBrowser.CommandBar.ClickCommand(&quot;Save&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If we run the test above, this would be the result:</p>
+<img src="/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/EasyReproTest.gif" class="" title="EasyRepro Test">
+
+<p>Now let’s analyze the most important parts:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. Create instance of the browser</span><br><span class="line">using (var xrmBrowser &#x3D; new XrmBrowser(new BrowserOptions() &#123; BrowserType&#x3D;BrowserType.Chrome &#125;))</span><br></pre></td></tr></table></figure>
+<p>This creates an instance of the XrmBrowser, which is the main object that will contain the methods to interact with Dynamics. This is also the main difference with normal Selenium tests; I no longer need to create a specific WebDriver object for each browser type. EasyRepro sets this XrmBrowser object which will do all the job for us. I only need to specify what Browser I want to run against as a parameter in the constructor. </p>
+<p>This value along with the url and user credentials, can and must ne read from a configuration source, like the app.config file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 2. Log-in to Dynamics 365</span><br><span class="line">xrmBrowser.LoginPage.Login(url, userName, pwd);</span><br></pre></td></tr></table></figure>
+<p>This is just how we tell to the Browser we want to perform the necessary steps to log in into the application. </p>
+<p>Again, this is the cool part of EasyRepro. Given that the Login page, its URL and all the UI elements are the same for any given CRM Online instance, I can encapsulate all of the logic for performing that interaction in a function, and just use it providing the relevant information. In this case, the url, user and password. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 3. Go to Sales&#x2F;Contacts using the Sitemap</span><br><span class="line">xrmBrowser.Navigation.OpenSubArea(&quot;Sales&quot;, &quot;Contacts&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>It’s the same story here. The navigation and the sitemap are made of several UI elements, and in order to click on any of them I need to know how’s that structure rendered and how are its parts glue together. With EasyRepro, I only need to provide what’s relevant. That I want to click on the <strong>Sales</strong> area of the site map and the <strong>Contacts</strong> section of it. EasyRepro will take care of the rest. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 4. Change the active view</span><br><span class="line">xrmBrowser.Grid.SwitchView(&quot;Active Contacts&quot;);</span><br></pre></td></tr></table></figure>
+<p>After clicking on the desired sitemap item, the browser will navigate to the main view of the contacts entity. The main view can be the default one, which may or may not ne the one that I want to use, so with the line above, I make sure that view is selected. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;5. Click on the &quot;New&quot; button</span><br><span class="line">xrmBrowser.CommandBar.ClickCommand(&quot;New&quot;);</span><br></pre></td></tr></table></figure>
+<p>The CommandBar object provides the ClickCommand method to interact with the Ribbons. In this case, we provide the Text on the button we want to click in. It also works with dropdown buttons.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;6. Set the attribute values in the form</span><br><span class="line">xrmBrowser.Entity.SetValue(new CompositeControl() &#123; Id &#x3D; &quot;fullname&quot;, Fields &#x3D; fields &#125;);</span><br><span class="line">xrmBrowser.Entity.SetValue(&quot;emailaddress1&quot;, &quot;test@contoso.com&quot;);</span><br></pre></td></tr></table></figure>
+<p>Now comes the interesting stuff, where we set the values of the record. The contact entity is a good example of interaction with composite fields, where the name in this case is made of other parts. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;7. Save the new record</span><br><span class="line">xrmBrowser.CommandBar.ClickCommand(&quot;Save&quot;);</span><br></pre></td></tr></table></figure>
+<p>And finally, as we’ve seen before, we can use the <strong>CommandBar</strong> object to click on the <strong>Save</strong> button.</p>
+<p>And now what?</p>
+<p>The next step in this test should be to check the status of the records. The usual requirement when creating a record is to set some calculated values by default, so the goal of the tests probably should be to make sure these fields were populated correctly. </p>
+<p>The way to do it is through the normal Assert methods available in any test framework. </p>
+<p>In order to read the value of an attribute you would need something like</p>
+<pre><code class="c#"><span class="keyword">var</span> url = xrmBrowser.Entity.GetValue(<span class="string">"websiteurl"</span>);</code></pre>
+<p>And then, perform an Assert to make sure the url has the value we expect.</p>
+<p>The above code is available on Github. Feel free to send a Pull Request if you see any errors or want to suggest any improvements. You can also clone the repository and run the tests locally if you want to try it yourself.<br><a href="https://github.com/crisfervil/EasyReproTest/blob/master/src/EasyReproTest/ContactTests.cs" target="_blank" rel="noopener">https://github.com/crisfervil/EasyReproTest/blob/master/src/EasyReproTest/ContactTests.cs</a></p>
+<p>There are also more examples available in the EasyRepro github.<br><a href="https://github.com/Microsoft/EasyRepro/tree/releases/v9.0/Microsoft.Dynamics365.UIAutomation.Sample" target="_blank" rel="noopener">https://github.com/Microsoft/EasyRepro/tree/releases/v9.0/Microsoft.Dynamics365.UIAutomation.Sample</a></p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://msdn.microsoft.com/en-us/library/dd286726.aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/library/dd286726.aspx</a><br><a href="https://www.seleniumhq.org/docs/01_introducing_selenium.jsp" target="_blank" rel="noopener">https://www.seleniumhq.org/docs/01_introducing_selenium.jsp</a><br><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing</a><br><a href="http://toolsqa.com/selenium-c-sharp/" target="_blank" rel="noopener">http://toolsqa.com/selenium-c-sharp/</a><br><a href="https://www.codeproject.com/Articles/1016775/Getting-Started-with-WebDriver-Csharp-in-Minutes" target="_blank" rel="noopener">https://www.codeproject.com/Articles/1016775/Getting-Started-with-WebDriver-Csharp-in-Minutes</a><br><a href="https://crmtipoftheday.com/967/ui-testing-for-dynamics-365/" target="_blank" rel="noopener">https://crmtipoftheday.com/967/ui-testing-for-dynamics-365/</a></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/" data-id="ck8x36ccf0000twe19h6ge3xj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2018/03/05/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">EasyRepro - UI Automated Tests in Dynamics 365 - Part 1</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2018/12/06/Snow-effect-in-Dynamics-365/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Snow effect in Dynamics 365</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>This is my professional blog, where I write about my experiencies in software development</p> <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cristhianfernandez" target="_blank" rel="noopener">Linkedin profile</a></p> <p><i class="fa fa-github"><a href="https://github.com/crisfervil" target="_blank" rel="noopener"></i>Github repo</a></p>
+
+</div>
+
+
+  
+
+
+  
+
+
+  
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/1982/02/">February 1982</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2018/12/06/Snow-effect-in-Dynamics-365/">Snow effect in Dynamics 365</a>
+        </li>
+      
+        <li>
+          <a href="/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/">EasyRepro - UI Automated Tests in Dynamics 365 - Part 2</a>
+        </li>
+      
+        <li>
+          <a href="/2018/03/05/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1/">EasyRepro - UI Automated Tests in Dynamics 365 - Part 1</a>
+        </li>
+      
+        <li>
+          <a href="/1982/02/17/Hello-World/">Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Cristhian Fernandez<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
