@@ -1,11 +1,12 @@
 ---
-title: UI-Automated-Tests-in-Dynamics-CRM-365-Part2
+title: EasyRepro - UI Automated Tests in Dynamics 365 - Part 2
+date: 2018-03-06
 tags:
 ---
 # Intro
 This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. 
 
-The first part [Link to the First part] describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about [Selenium](https://www.seleniumhq.org/), probably the most popular and robust tool available for Browser UI automation. 
+The {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1 first part %} describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about [Selenium](https://www.seleniumhq.org/), probably the most popular and robust tool available for Browser UI automation. 
 
 In this part we are describing EasyRepro, a library built by Microsoft that leverages all the power provided by Selenium and takes advantage of the well defined structure of components in Dynamics 365.
 
@@ -81,7 +82,7 @@ public void CreateContact()
 
 If we run the test above, this would be the result:
 
-![EasyRepro Test](images/EasyReproTest.gif)
+{% asset_img EasyReproTest.gif EasyRepro Test %}
 
 Now let's analyze the most important parts:
 

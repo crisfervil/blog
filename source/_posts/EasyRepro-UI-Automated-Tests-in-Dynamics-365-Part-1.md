@@ -1,6 +1,6 @@
 ---
 title: EasyRepro - UI Automated Tests in Dynamics 365 - Part 1
-date: 2018-03-06 17:28:37
+date: 2018-03-05
 tags:
 ---
 # User Interface Automated Tests
@@ -26,11 +26,11 @@ The [WebDriver](https://www.seleniumhq.org/projects/webdriver/) is a library, ve
 
 Probably the biggest challenge in designing such a tool is the overwhelming variety of Browsers and Platforms available in the market. So, how can we find the common ground among them so we can write test specifications once and run them in different browsers? But not only that, also several combinations of browsers and Operating Systems? 
 
-![WebDriver for different browsers](images/WebDriver_3.png)
+{% asset_img WebDriver_3.png WebDriver for different browsers %}
 
 Even more, how can we make these libraries available to different coding languages, so we can write the tests in the same way no matter if we are using c#, Java or Python?
 
-![WebDriver for different languages](images/WebDriver_2.png)
+{% asset_img WebDriver_2.png WebDriver for different browsers %}
 
 Selenium and the WebDriver tackle above problems providing an elegant API built in several layers. 
 
@@ -38,7 +38,7 @@ Selenium and the WebDriver tackle above problems providing an elegant API built 
 
 Let's analyze this simple piece of code to see the different elements we are talking about
 
-``` c#
+```c#
 [Fact]
 public void GoogleSearch()
 {
@@ -74,7 +74,8 @@ First of all, Selenium is available to be coded using different languages. Each 
 
 If I run the test above I get the following result:
 
-![Selenium execution result](images/SeleniumBasicTest.gif)
+{% asset_img SeleniumBasicTest.gif Selenium execution result %}
+
 
 Let's move onto analyzing the code. In summary, what this code does is opening a Chrome browser window, navigate to the Google page and perform a search. Easy, right?
 
@@ -157,7 +158,7 @@ In this first part we covered an introduction of the main elements of the Browse
 
 This library built by Microsoft takes advantage of the well defined structure of Entities, Attributes, SiteMap and all the different elements that are part of the platform.
 
-Continue reading the second part here: [Add link to the second part here]
+Continue reading the second part here: {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2 Part 2 %}
 
 
 # References
