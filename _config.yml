@@ -4,7 +4,7 @@
 
 # Site
 title: Cristhian Fernandez
-subtitle: 'My brain backup'
+subtitle: 'Professional Blog'
 description: 'Blog about my experiences in software development'
 keywords:
 author: 'Cristhian Fernandez'
@@ -97,9 +97,9 @@ theme: bootstrap-blog
 
 theme_config: 
   about_widget_content: >
-    <p>This is my personal blog, where I write about my experiencies in development</p>
-    <p><i class="fa fa-linkedin"></i><a href="#">Linkedin profile</a></p>
-    <p><i class="fa fa-github"><a href="#"></i>Github repo</a></p>
+    <p>This is my professional blog, where I write about my experiencies in development</p>
+    <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cristhianfernandez">Linkedin profile</a></p>
+    <p><i class="fa fa-github"><a href="https://github.com/crisfervil"></i>Github repo</a></p>
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
