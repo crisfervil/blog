@@ -6,10 +6,7 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server",
-    "create-cname": "echo blog.crisfervil.com > themes/bootstrap-blog/source/CNAME",
-    "install-template": "git clone https://github.com/cgmartin/hexo-theme-bootstrap-blog.git themes/bootstrap-blog & npm run create-cname",
-    "update-template": "cd themes/bootstrap-blog & git pull"    
+    "server": "hexo server"
   },
   "hexo": {
     "version": "4.2.0"
