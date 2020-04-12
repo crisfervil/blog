@@ -1,6 +1,6 @@
 ---
 title: Snow effect in Dynamics 365
-date: 2018-12-06 20:28:21
+date: 2018-12-06
 tags:
 ---
 So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. 

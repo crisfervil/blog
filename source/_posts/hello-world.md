@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: "1982/02/17 09:00"
+date: 1982-02-17
 ---
 Thanks for visiting this blog
 
