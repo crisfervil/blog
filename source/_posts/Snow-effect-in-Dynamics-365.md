@@ -3,8 +3,6 @@ title: Snow effect in Dynamics 365
 date: 2018-12-06 20:28:21
 tags:
 ---
-# Snow Effect in Dynamics 365
-
 So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. 
 
 And because we are D365 hackers and we can't help being obsessed with our work, we have to focus that energy to produce something different and really *useful*. 

@@ -2,8 +2,7 @@
 title: Hello World
 date: "1982/02/17 09:00"
 ---
-# This is a Test
-Thanks visiting this blog
+Thanks for visiting this blog
 
 ## This is another test
 Thank you again
