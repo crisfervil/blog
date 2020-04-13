@@ -8,5 +8,5 @@ You can visit it in [https://blog.crisfervil.com](https://blog.crisfervil.com)
 - [ ] Fix archive links issue
 - [ ] Add discuss support
 - [ ] Add Google statistics
-- [ ] Add CV
+- [x] Add CV
 - [ ] Fix vulnerability issue

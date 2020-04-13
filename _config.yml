@@ -97,9 +97,17 @@ theme: bootstrap-blog
 
 theme_config: 
   about_widget_content: >
-    <p>This is my professional blog, where I write about my experiencies in software development</p>
-    <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cristhianfernandez">Linkedin profile</a></p>
-    <p><i class="fa fa-github"><a href="https://github.com/crisfervil"></i>Github repo</a></p>
+    <p>This is where I write about my experiencies in software development</p>
+    <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cristhianfernandez">Linkedin</a></p>
+    <p><i class="fa fa-github"><a href="https://github.com/crisfervil"></i>Github</a></p>
+
+  # Header
+  navbar_brand: false
+  menu:
+    Home: index.html
+    Archives: archives/
+    About: about/me.html
+  rss: /atom.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
