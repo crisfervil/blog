@@ -1,6 +1,7 @@
 ---
 title: Hello World
 date: 1982-02-17
+tags: test
 ---
 Thanks for visiting this blog
 
