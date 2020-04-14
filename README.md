@@ -10,3 +10,7 @@ You can visit it in [https://blog.crisfervil.com](https://blog.crisfervil.com)
 - [ ] Add Google statistics
 - [x] Add CV
 - [ ] Fix vulnerability issue
+- [ ] Fix the share button
+- [ ] The code is not beign formatted correctly
+- [ ] Write a Top Ten Articles Page
+- [ ] Add twitter link
