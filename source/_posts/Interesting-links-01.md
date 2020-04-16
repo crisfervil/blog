@@ -39,8 +39,6 @@ Interesting links I've found this week
 Microsoft Azure Virtual Training Day](https://info.microsoft.com/CE-AzureINFRA-WBNR-FY20-04Apr-21-MicrosoftAzureVirtualTrainingDayFundamentalsMaster-SRDEM17525_LP01Registration-ForminBody.html): Free virtual session happening on April 21st. Fundamentals explains cloud-computing concepts, models, and services, covering topics such as public, private, and hybrid cloud as well as infrastructure as a service, platform as a service, and software as a service. By attending the event, you will have the knowledge needed to take the AZ-900 Microsoft Azure Fundamentals certification exam and receive a voucher to take the exam for free at a date and time of your choice.
 
 
-
-
 - [Debug Ribbon button customization using Command Checker in Dynamics 365 CE Unified Interface](https://d365demystified.com/2020/04/14/debug-ribbon-button-customization-using-command-checker-in-dynamics-365-ce-unified-interface/):
 
 
@@ -50,8 +48,12 @@ Microsoft Azure Virtual Training Day](https://info.microsoft.com/CE-AzureINFRA-W
 
 
 
+- [Open a main record in a dialog in a model driven app](https://powerapps.microsoft.com/en-us/blog/open-a-main-record-in-a-dialog-in-a-model-driven-app/): Included in the April 2020 preview release, there is a new feature called Main Form Dialog (MFD). With this feature you can now open a related record entity on a parent or base form without requiring the user to navigate away, your users can stay in context and edit an existing record or create a new one.
 
 
 
 
+
+
+---
 The source of this post is stored in GitHub. [Click Here](https://github.com/crisfervil/blog/edit/master/source/_posts/Interesting-links-01.md) if you want to propose a change.
