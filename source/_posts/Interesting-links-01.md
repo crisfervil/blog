@@ -4,10 +4,10 @@ date: 2020-04-14 08:01:14
 tags:
 - linklist
 ---
-{% asset_img 2020-04-16-12-54-46.png Links Banner %}
-
-
+{% asset_img banner.png Links Banner %}
+---
 Interesting links I've found this week
+
 
 # Training / Events
 
