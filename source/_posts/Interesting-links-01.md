@@ -70,3 +70,8 @@ Interesting links I've found this week
 # Microsoft Teams
 
 - [How to add your custom background](https://elbruno.com/2020/04/15/teams-how-to-add-your-custom-background-not-official-and-at-your-own-risk/) : The same functionality available in Zoom now in Teams too
+
+
+# Cognitive Services
+
+-[Cognitive Services at the Edge](https://ivatilca.wordpress.com/2020/04/15/microsoft-cognitive-services-at-the-edge/): 
