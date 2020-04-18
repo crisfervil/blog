@@ -5,21 +5,22 @@
   
   <title>EasyRepro - UI Automated Tests in Dynamics 365 - Part 2 | Cristhian Fernandez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IntroThis is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenie">
+  <meta name="description" content="This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenient">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EasyRepro - UI Automated Tests in Dynamics 365 - Part 2">
 <meta property="og:url" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/index.html">
 <meta property="og:site_name" content="Cristhian Fernandez">
-<meta property="og:description" content="IntroThis is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenie">
+<meta property="og:description" content="This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365.  The first part describes what is the purpose of automating UI tests and when is convenient">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/banner.png">
 <meta property="og:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/EasyReproTest.gif">
 <meta property="article:published_time" content="2018-03-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-13T11:28:02.149Z">
+<meta property="article:modified_time" content="2020-04-18T12:04:00.962Z">
 <meta property="article:author" content="Cristhian Fernandez">
 <meta property="article:tag" content="Dynamics">
 <meta property="article:tag" content="Testing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/EasyReproTest.gif">
+<meta name="twitter:image" content="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/banner.png">
   
     <link rel="alternate" href="/atom.xml" title="Cristhian Fernandez" type="application/atom+xml">
   
@@ -115,9 +116,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. </p>
+        <img src="/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/banner.png" class="" title="Links Banner">
+<hr>
+<p>This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. </p>
 <p>The <a href="/2018/03/05/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1/" title="first part">first part</a> describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about <a href="https://www.seleniumhq.org/" target="_blank" rel="noopener">Selenium</a>, probably the most popular and robust tool available for Browser UI automation. </p>
 <p>In this part we are describing EasyRepro, a library built by Microsoft that leverages all the power provided by Selenium and takes advantage of the well defined structure of components in Dynamics 365.</p>
+<a id="more"></a>
+
 <h1 id="EasyRepro"><a href="#EasyRepro" class="headerlink" title="EasyRepro"></a>EasyRepro</h1><p>As you’ve seen, Selenium is a comprehensive robust tool that will allow you to write User Interface tests for Dynamics CRM. It has all you need, but it becomes quite laborious to write medium and complex tests. </p>
 <p>Every click and form field filling requires a few lines of code. <a href="https://saucelabs.com/blog/selenium-design-patterns" target="_blank" rel="noopener">There are patterns</a> to help you increase the reusability of your tests to the maximum, but still, some tests can be hard and time consuming to write. </p>
 <p>But at the same time Dynamics 365 has a feature that comes in really handy to reduce the amount of code required; every single form, section and field is rendered in the same way, it follows the same structure, and it has a perfectly defined naming convention for UI elements. </p>
@@ -167,7 +172,14 @@
 
     
 
+    
     <footer class="article-footer">
+      
+      <div>
+        The source of this post is stored in GitHub. 
+        <a href="https://github.com/crisfervil/blog/edit/master/source/_posts/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2.md" target="_blank" rel="noopener"">Click Here</a> to propose a change.
+      </div>
+
       <a data-url="https://blog.crisfervil.com/2018/03/06/EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2/" data-id="ck8x36ccf0000twe19h6ge3xj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
@@ -177,6 +189,7 @@
 
 
     </footer>
+    
   </div>
   
     
@@ -222,7 +235,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dynamics/" rel="tag">Dynamics</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JS/" rel="tag">JS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Testing/" rel="tag">Testing</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/test/" rel="tag">test</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list" itemprop="keywords"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dynamics/" rel="tag">Dynamics</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JS/" rel="tag">JS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Testing/" rel="tag">Testing</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/linklist/" rel="tag">linklist</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/test/" rel="tag">test</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -231,7 +244,7 @@
   <div class="sidebar-module">
     <h4>Tag Cloud</h4>
     <p class="tagcloud">
-      <a href="/tags/Dynamics/" style="font-size: 20px;">Dynamics</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Testing/" style="font-size: 15px;">Testing</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+      <a href="/tags/Dynamics/" style="font-size: 20px;">Dynamics</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Testing/" style="font-size: 15px;">Testing</a> <a href="/tags/linklist/" style="font-size: 10px;">linklist</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
     </p>
   </div>
 
@@ -239,7 +252,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/1982/02/">February 1982</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/04/">April 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/12/">December 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/03/">March 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/1982/02/">February 1982</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -248,6 +261,10 @@
   <div class="sidebar-module">
     <h4>Recents</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2020/04/14/Interesting-links-01/">Interesting links 01</a>
+        </li>
       
         <li>
           <a href="/2018/12/06/Snow-effect-in-Dynamics-365/">Snow effect in Dynamics 365</a>
