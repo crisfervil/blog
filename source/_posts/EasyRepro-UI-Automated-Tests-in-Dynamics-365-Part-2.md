@@ -5,12 +5,13 @@ tags:
 - Dynamics
 - Testing
 ---
-# Intro
 This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. 
 
 The {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1 first part %} describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about [Selenium](https://www.seleniumhq.org/), probably the most popular and robust tool available for Browser UI automation. 
 
 In this part we are describing EasyRepro, a library built by Microsoft that leverages all the power provided by Selenium and takes advantage of the well defined structure of components in Dynamics 365.
+
+<!-- more -->
 
 # EasyRepro
 
@@ -25,6 +26,8 @@ This increases the chances of writing reusable code. If you think about it, give
 Well, the clever guys at Microsoft must have came up with the same conclusion, and decided to create a framework for this; it is called [EasyRepro](https://github.com/Microsoft/EasyRepro).
 
 EasyRepro is a library meant to facilitate the writing of UI tests for Dynamics 365, leveraging the well defined structure mentioned above. 
+
+
 
 # Example
 

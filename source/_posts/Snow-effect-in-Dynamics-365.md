@@ -13,6 +13,9 @@ Today, a small hack to bring the Christmas winter atmosphere to our deployments:
 
 Based on Scott Schiller snow storm project:  https://github.com/scottschiller/snowstorm/
 
+<!-- more -->
+
+
 This trick works well on on-line instances. I haven't tested it on an on-premise, but there is no reason why it shouldn't work. 
 
 I haven't tested it on Internet Explorer or Firefox either. It works well on Chrome and Edge.
