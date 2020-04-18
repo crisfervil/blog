@@ -158,11 +158,11 @@ https://github.com/crisfervil/EasyReproTest/blob/master/src/EasyReproTest/Seleni
 
 # EasyRepro
 
-In this first part we covered an introduction of the main elements of the Browser User Interface Test. The next chapter (#Add next chapter link here#) we are going to describe a library built on top of Selenium specifically designed to help us write UI tests for Dynamics CRM. 
+In this first part we covered an introduction of the main elements of the Browser User Interface Test. {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2 In the next chapter %} we are going to describe a library built on top of Selenium specifically designed to help us write UI tests for Dynamics CRM. 
 
 This library built by Microsoft takes advantage of the well defined structure of Entities, Attributes, SiteMap and all the different elements that are part of the platform.
 
-Continue reading the second part here: {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2 Part 2 %}
+{% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-2 Continue reading the second part... %}
 
 
 # References
