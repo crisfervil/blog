@@ -5,9 +5,9 @@ tags:
 - Dynamics
 - Testing
 ---
-{% asset_img banner.png Links Banner %}
----
 
+{% asset_img banner.png Post Banner %}
+---
 
 Many, perhaps most, software applications today are written as web-based applications to be run in an Internet browser. The effectiveness of testing these applications varies widely among companies and organizations. In an era of highly interactive and responsive software processes where many organizations are using some form of Agile methodology, test automation is frequently becoming a requirement for software projects. Test automation is often the answer. Test automation means using a software tool to run repeatable tests against the application to be tested. For regression testing this provides that responsiveness.
 

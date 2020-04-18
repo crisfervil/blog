@@ -4,8 +4,10 @@ date: 2020-04-14 08:01:14
 tags:
 - linklist
 ---
-{% asset_img banner.png Links Banner %}
+
+{% asset_img banner.png Post Banner %}
 ---
+
 Interesting links I've found lately.
 
 

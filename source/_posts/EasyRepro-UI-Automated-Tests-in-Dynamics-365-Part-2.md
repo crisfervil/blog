@@ -5,9 +5,9 @@ tags:
 - Dynamics
 - Testing
 ---
-{% asset_img banner.png Links Banner %}
----
 
+{% asset_img banner.png Post Banner %}
+---
 
 This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. 
 

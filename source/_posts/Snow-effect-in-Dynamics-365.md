@@ -5,7 +5,8 @@ tags:
 - Dynamics
 - JS
 ---
-{% asset_img banner.png Links Banner %}
+
+{% asset_img banner.png Post Banner %}
 ---
 
 So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. 
