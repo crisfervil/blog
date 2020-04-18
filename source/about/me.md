@@ -33,4 +33,4 @@ See some of the events that took place during my personal and proffesional caree
 - Oct 1999: Began my studies in Computer Science
 - Sep 1999: Moved to Spain
 - Dec 1998: Finished Secondary School
-- Feb 1982: A start was born ;)
+- Feb 1982: A geek is born
