@@ -13,20 +13,24 @@ I am an open creative person, with energy and integrity. I really enjoy working 
 
 Find me in [LinkedIn](https://www.linkedin.com/in/cristhianfernandez")
 
-# Professional Timeline
+# My Timeline
 
-See some of the events that took place during my proffesional career. 
+See some of the events that took place during my personal and proffesional career. 
 
 - Today
 - May 2019: Promoted to Team Leader
-- April 2019: Organized the First Codec Hackathon
-- Sept 2015: Won the Dragon's Den contest in Codec
-- March 2015: Senior Consultant in [Codec](http://codec.ie/)
-- March 2015: Moved to Ireland
-- December 2014: Promoted to Senior Consultant in Avanade
-- January 2013: Won the Delivery Excellence Award in Avanade
-- April 2012: CRM Consultant in [Avanade](http://avanade.es/)
-- October 2006: Consultant in [Avanade](http://avanade.es/)
-- January 2001: Senior Developer in [GSC](http://gscsal.es/)
-- September 2001: Developer in Chronos Iberica
-- September 2000: Developer in Medialabs
+- Apr 2019: Organized a Dynamics 365 Hackathon
+- Sep 2015: Won a Dragon's Den contest for business ideas
+- Mar 2015: Started a job as Senior Consultant
+- Mar 2015: Moved to Ireland
+- Dec 2014: Promoted to Senior Consultant
+- Jan 2013: Won the Delivery Excellence Award in my company
+- Apr 2012: Started working as CRM Consultant
+- Oct 2006: Started working as Developer Consultant
+- Sep 2001: Started a position as Senior Developer
+- Jan 2001: Started a developer internship
+- Sep 2000: Started my first job in Spain
+- Oct 1999: Began my studies in Computer Science
+- Sep 1999: Moved to Spain
+- Dec 1998: Finished Secondary School
+- Feb 1982: A start was born ;)
