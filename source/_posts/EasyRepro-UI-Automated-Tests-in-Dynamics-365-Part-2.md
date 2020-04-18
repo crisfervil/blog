@@ -5,6 +5,10 @@ tags:
 - Dynamics
 - Testing
 ---
+{% asset_img banner.png Links Banner %}
+---
+
+
 This is the second part of a 2 parts intro article about Automated User Interface tests for Dynamics 365. 
 
 The {% post_link EasyRepro-UI-Automated-Tests-in-Dynamics-365-Part-1 first part %} describes what is the purpose of automating UI tests and when is convenient to do it. Also, we talk about [Selenium](https://www.seleniumhq.org/), probably the most popular and robust tool available for Browser UI automation. 

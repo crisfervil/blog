@@ -5,6 +5,9 @@ tags:
 - Dynamics
 - JS
 ---
+{% asset_img banner.png Links Banner %}
+---
+
 So, Christmas is around the corner, and even though there are some grinches out there is good to keep the spirit alive and spread the good vibes. 
 
 And because we are D365 hackers and we can't help being obsessed with our work, we have to focus that energy to produce something different and really *useful*. 
