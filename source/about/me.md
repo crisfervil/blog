@@ -15,7 +15,7 @@ Find me in [LinkedIn](https://www.linkedin.com/in/cristhianfernandez")
 
 # My Timeline
 
-See some of the events that took place during my personal and proffesional career. 
+See some of the events that took place during my personal and proffessional career. 
 
 - Today
 - May 2019: Promoted to Team Leader
