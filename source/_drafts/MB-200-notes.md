@@ -47,6 +47,51 @@ Categorized Search uses SQL text catalogs to work.
 
 https://crmbook.powerobjects.com/basics/searching-and-navigation/searching-crm/#categorized_search
 
+
+
+# Solution Patching and Versioning
+
+* **Solution Segmentation** allows to export solutions with selected entity assets, such as entity fields, forms, and views, rather than entire entities with all the assets.
+
+* A solution’s version has the following format: major.minor.build.revision. 
+
+* A patch must have a higher build or revision number than the parent solution. It can’t have a higher major or minor version. The display name can be different.
+
+* A cloned solution must have the version number greater than or equal to the version number of the base solution. 
+
+* **Clone to patch** creates a patch of the main solution.
+
+* **Clone to solution** creates a new version, that includes all the patches from the main solution. A cloned solution must have the version number greater than or equal to the version number of the base solution
+
+* A patch represents an incremental minor update to the parent solution. A patch can add or update components and assets in the parent solution when installed on the target system, but it can’t delete any components or assets from the parent solution.
+
+* A patch can have only one parent solution, but a parent solution can have one or more patches.
+
+* A patch is created for unmanaged solution. You can’t create a patch for a managed solution.
+
+* When you export a patch to a target system, you should export it as a managed patch. Don’t use unmanaged patches in production environments.
+
+* The parent solution must be present in the target system to install a patch.
+
+* You can delete or update a patch.
+
+* If you delete a parent solution, all child patches are also deleted. The system gives you a warning message that you can’t undo the delete operation. The deletion is performed in a single transaction. If one of the patches or the parent solution fails to delete, the entire transaction is rolled back.
+
+* After you have created the first patch for a parent solution, the solution becomes locked, and you can’t make any changes in this solution or export it. However, if you delete all of its child patches, the parent solution becomes unlocked.
+
+* When you clone a base solution, all child patches are rolled up into the base solution and it becomes a new version. You can add, edit, or delete components and assets in the cloned solution.
+
+* A cloned solution represents a replacement of the base solution when it’s installed on the target system as a managed solution. Typically, you use a cloned solution to ship a major update to the preceding solution.
+
+https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/create-patches-simplify-solution-updates
+
+https://community.dynamics.com/365/f/dynamics-365-general-forum/348379/solution-version-number/932999
+
+https://d365demystified.com/2019/01/05/using-clone-a-patch-clone-solution-in-d365-solutions/
+
+https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/customize/use-segmented-solutions-patches-simplify-updates
+
+
 # Change Tracking
 
 The change tracking feature in Common Data Service provides a way to keep the data synchronized in an efficient manner by detecting what data has changed since the data was initially extracted or last synchronized. 
