@@ -9,6 +9,9 @@ tags:
 
 Interesting links I've found lately.
 
+# Azure
+
+- [Power Automate, Logic Apps, Functions, and WebJobs comparison](https://docs.microsoft.com/en-us/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs) : Official documentatio about when and where to use them.
 
 # General Development
 
