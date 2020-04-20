@@ -145,6 +145,22 @@ Steps to integrate with One Note:
 
 https://docs.microsoft.com/en-us/power-platform/admin/set-up-onenote-integration-in-dynamics-365
 
+# OneDrive
+
+## Requirements to integrate:
+
+- A OneDrive for Business license for each use
+- A SharePoint license for each user.
+- Office 365 Enterprise E3 or later
+
+## Enabling OneDrive
+
+- Settings > Integration > Document management settings
+- Enable OneDrive for Business to enable it, and then select OK
+- Add permissions to the user. Edit a Security Role. Under Miscellaneous Privileges, toggle the OneDrive for Business privilege to the desired availability
+
+https://docs.microsoft.com/en-us/power-platform/admin/enable-onedrive-for-business
+
 # Dynamics 365 App for Outlook
 
 ## To push the app to users
