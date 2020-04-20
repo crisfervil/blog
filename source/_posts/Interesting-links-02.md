@@ -22,3 +22,11 @@ Interesting links I've found lately.
 # General Development
 
 - [Tips for Remote Workshops](https://brianilland.me/2020/04/16/tips-for-running-remote-discovery-workshops-during-a-pandemic/): 
+
+# Power Apps
+
+- [AppSource checker – now available in ISV Studio](https://powerapps.microsoft.com/en-us/blog/announcing-the-release-of-appsource-checker-now-available-in-isv-studio/) : AppSource checker allows an ISV to check the certification criteria of an app prior to submitting for AppSource certification.
+
+- [Opportunity Revenue Forecasting](https://ryanmaclean365.com/2020/04/16/dynamics-365-opportunity-revenue-forecasting-with-power-automate-part-1/) : Step by Step guide of a tool to break the estimated revenue down over the life of a project.
+
+- [PCF for Multiselecting records](https://pcf.gallery/multiselect-records/) : Allows to select different records from an entity and set one of its fields in a text area.
