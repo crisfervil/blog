@@ -7,6 +7,20 @@ tags:
 Notes I've taken during the preparation of the [MB-200: Microsoft Power Platform + Dynamics 365 Core](https://docs.microsoft.com/en-us/learn/certifications/exams/mb-200?tab=tab-learning-paths) exam
 
 
+# Training Material
+
+|Duration|Topic
+|---|---
+|02:11|[Canvas Apps](https://docs.microsoft.com/en-ie/learn/paths/create-powerapps/)
+|02:40|[Model driven apps](https://docs.microsoft.com/en-ie/learn/paths/create-app-models-business-processes/)
+|05:15|[Implementing Customer Engagement](https://docs.microsoft.com/en-ie/learn/paths/implementing-customer-engagement-apps/)
+|03:20|[Power Automate](https://docs.microsoft.com/en-ie/learn/paths/automate-process-power-automate/)
+|06:22|[Power BI](https://docs.microsoft.com/en-ie/learn/paths/create-use-analytics-reports-power-bi/)
+|19:48|Total
+
+https://docs.microsoft.com/en-us/learn/certifications/exams/mb-200
+
+
 # Apps
 
 ## To setup access to apps
