@@ -20,8 +20,21 @@ Notes I've taken during the preparation of the [MB-200: Microsoft Power Platform
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/mb-200
 
+# Power Apps
 
-# Apps
+Power Apps Studio: To configure user interface (UI) elements.
+Power Apps Admin Center: To define environment and data policies.
+make.powerapps.com: To open existing apps, create, share apps, and create data connections and flows.
+
+You can use many external data sources, including Twitter, Facebook, Microsoft SQL Server, and Salesforce. You can use also on-prem data using the data gateway. 
+
+When creating a new App from a data source, the Browse, Edit and Details screens are automaticall created. 
+
+## Formulas
+Formula reference for Power Apps: https://docs.microsoft.com/en-ie/powerapps/maker/canvas-apps/formula-reference
+
+
+# Model Driven Apps
 
 ## To setup access to apps
 * Go to Settings > My Apps.
