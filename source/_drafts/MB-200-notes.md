@@ -28,13 +28,52 @@ make.powerapps.com: To open existing apps, create, share apps, and create data c
 
 You can use many external data sources, including Twitter, Facebook, Microsoft SQL Server, and Salesforce. You can use also on-prem data using the data gateway. 
 
-When creating a new App from a data source, the Browse, Edit and Details screens are automaticall created. 
+When creating a new App from a data source, the Browse, Edit and Details screens are automatically created. 
 
-## Formulas
+When a user selects a button or a control, the OnSelect event is triggered. Then you have to set the formula that you want to run. 
+
+You can customize all aspects of the app, including screen, layouts and formulas, when creating an app from data. 
+
+The gallery control allows to display and select all records from a data source.
+
 Formula reference for Power Apps: https://docs.microsoft.com/en-ie/powerapps/maker/canvas-apps/formula-reference
 
+People who have Co-owner permission also need a Power Apps P2 license to work directly with entities in Common Data Service.
+
+If you want to work with Power Apps environments, you need a Power Apps Plan 2 license or the free Power Apps Plan 2 trial. Additionally, if you want to work with Dynamics 365 restricted entities, you must have a Power Apps for Dynamics 365 license. [Licensing overview for Power Platform](https://docs.microsoft.com/en-us/power-platform/admin/pricing-billing-skus)
+
+Customer Survey is not created in your environment when you toggle "Include sample apps and data" to true.
+
+You can't create a custom activity by using the Microsoft Power Apps portal. You must open Solution Explorer by using the Advanced button.
+
+Things that you can do with Business Rules:
+- Set field values.
+- Clear field values.
+- Set field requirement levels.
+- Show or hide fields.
+- Enable or disable fields.
+- Validate data and show error messages.
+- Create business recommendations based on business intelligence.
+
+The below is not available on canvas apps:
+- Show or hide fields
+- Enable or disable fields
+- Create business recommendations based on business intelligence.
+
+You cannot set a lookup value when importing data from Excel, this must be done from Power Apps.
+
+A tenant can have up to 75 non-Production instances and 50 Production instances. 
+
+You cannot restore backups into a Production instance, the instance will have to be switched to Sandbox first, then you can proceed restoring from the backup, and then switch to Production again.
 
 # Model Driven Apps
+
+To share an app, you must have the Environment Admin or System Admin role.
+
+System Customizers have full permission to customize the environment. But users who have this role can view records only for environment entities that they create. To learn more, see [Privileges required for customization](https://docs.microsoft.com/dynamics365/customer-engagement/customize/privileges-required-customization).
+
+You can have up to 10 active business process flows per entity.
+
 
 ## To setup access to apps
 * Go to Settings > My Apps.
@@ -260,8 +299,8 @@ https://docs.microsoft.com/en-us/power-platform/admin/verify-network-capacity-th
 (Old way)
 To enable it, do it through the Dynamics Marketplace. Then access it from the organization settings
 https://www.powerobjects.com/blog/2018/03/12/how-install-view-organization-insights-dynamics-365/
-This has been deperecated. 
+This has been deprecated. 
 
 The new Organization Insights is available in Power Platform Admin Center, under the Analytics section. 
-It shows the active users, API calls, number of pluging executions, plugin errors, etc.
+It shows the active users, API calls, number of plugin executions, plugin errors, etc.
 https://docs.microsoft.com/en-us/power-platform/admin/analytics-common-data-service
