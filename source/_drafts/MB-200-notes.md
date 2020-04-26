@@ -64,7 +64,96 @@ You cannot set a lookup value when importing data from Excel, this must be done 
 
 A tenant can have up to 75 non-Production instances and 50 Production instances. 
 
+When you place an instance in [Administration Mode](https://docs.microsoft.com/en-ie/power-platform/admin/sandbox-environments), only System Administrator or System Customizer can log in.
+
 You cannot restore backups into a Production instance, the instance will have to be switched to Sandbox first, then you can proceed restoring from the backup, and then switch to Production again.
+
+When you [copy an instance](https://docs.microsoft.com/en-ie/power-platform/admin/sandbox-environments), the target instance is placed in Administration mode and background operations are disabled.
+
+## Updates
+
+You can schedule, approve and reschedule updates before they start. 
+In order to approve or reschedule an update you must be a System Administrator. 
+When your update has started, you'll see Update in progress under Status. The reschedule option will no longer be available.
+
+Microsoft Dynamics 365 Update Policy states - Customer Driven Updates (CDU) are no longer available. The major updates will be deployed similar to our Minor Service Update experience we are delivering today and won't require you to schedule downtime. And also Microsoft will deliver two major updates per year, in April and October, offering new capabilities and functionality. These updates will be backward compatible, so your apps and customizations will continue to work post-update. These details can be found [here](docs.microsoft.com/dynamics365/get-started/faq-update-policy)
+
+## Storage
+
+The tenant subscriptions include by default 10-GB database storage as long at least one instance of the tenant is on v8.2. Additional storage capacity is granted at no charge at the rate of 5 GB for every 20 full users. The cap on the amount of free storage that may be earned per tenant is subject to the technical limit of 30 TB.
+
+[Old] Storage usage is displayed on the Microsoft Dynamics 365 Admin Center within the Service Health tab.
+
+[Storage usage is displayed on the Admin Center > Analytics > Capacity](https://docs.microsoft.com/en-us/power-platform/admin/capacity-storage).
+
+## Backups
+
+All instances are backed up automatically and daily. These backups do not count against your storage limits and are retained for 3 days.
+
+On-demand backups do not count against your storage limits and just like automatic backups are retained for 3 days.
+
+You can only restore to Sandbox instances. To restore to a Production instance, first switch it to a Sandbox instance, restore to it, and then [switch it back to a Production instance](https://docs.microsoft.com/en-ie/power-platform/admin/switch-environment).
+
+## Users
+
+A non-interactive user account lets external applications or tools authenticate and access Dynamics 365 **without requiring a license**. For each instance of Dynamics 365 you can create up to five non-interactive user accounts.
+
+There are three Active Directory account management models:
+- Cloud Only
+- Synchronized Identity
+- Federated Identity
+
+When you assign a user the **global administrator** or the **service administrator** role in the Microsoft Online Services environment, it automatically assigns the user the System Administrator security role in Dynamics.
+
+When you create a user, the user will not have access to Dynamics apps until you assign at least one security role to this user.
+
+Office 365 Roles that are relevant to Dynamics:
+- Global Admin
+- Billing Administrator
+- User Management Administrator
+- [Dynamics 365 Service Administrator](https://docs.microsoft.com/en-us/power-platform/admin/use-service-admin-role-manage-tenant)
+
+You can assign [Delegated Administration](https://docs.microsoft.com/en-ie/microsoft-365/admin/misc/add-partner) permissions an external partner to give them access to setup and configure the environment for you. 
+
+[Use Powershell to create, configure, and manage users in bulk](https://docs.microsoft.com/en-ie/office365/enterprise/powershell/manage-office-365-with-office-365-powershell).
+
+Global admins are the only admins who can assign other admin roles, and only global admins can manage the accounts of other global admins.
+
+## User Profile
+
+Some user profile information is maintained and managed in the Microsoft 365 admin center. After you create or update a user, these user profile fields are automatically updated and synchronized in your Customer Engagement instances. The Primary Email field does not automatically update and synchronize with Dynamics
+
+# Portals
+
+You can enable development or test portal to receive an early upgrade ahead of all customers, so you can test all core scenarios on your test portal before upgrades are rolled out to your live portal. Early upgrades are rolled out at least one week before the global rollout of any release. 
+In order to do so, click on the "Enable Portal for early upgrade" option when creating the portal. 
+
+During sign-up, the user has the option of creating a local account (providing a username and password) or selecting an external identity from a list of identity providers. If an external identity is selected, the user is required to sign in through the chosen identity provider to prove that they own the external account. In either case, the user is immediately registered and authenticated with the portal. A new contact record is created upon sign-up
+
+# Mobile
+
+Dynamics 365 requires the *Dynamics 365 for mobile* **permission** enabled to provide access to Dynamics 365 for phones and Dynamics 365 for tablets.
+
+The privilege to access mobile apps is pre-configured for sales roles but not other roles within the organization. It needs to be added to other roles so non-sales users can connect to Dynamics 365 with the mobile apps.
+
+Also, read permission is required on the following entities
+- Custom Control
+- Custom Control Default Config
+- Custom Control Resource
+- System Application Metadata
+- System Form
+- User Application Metadata
+- View
+- Model-driven App
+- User Settings
+
+You have also to enable Dashboards to made them available on mobile. 
+
+The form designer provides also options to hide attributes, sections and tabs from the mobile access. 
+
+https://docs.microsoft.com/en-ie/dynamics365/mobile-app/set-up-dynamics-365-for-phones-and-dynamics-365-for-tablets
+
+[Offline Synchronization](https://docs.microsoft.com/en-ie/dynamics365/mobile-app/setup-mobile-offline-for-admin)
 
 # Model Driven Apps
 
@@ -228,6 +317,8 @@ https://docs.microsoft.com/en-us/power-platform/admin/set-up-onenote-integration
 https://docs.microsoft.com/en-us/power-platform/admin/enable-onedrive-for-business
 
 # Dynamics 365 App for Outlook
+
+The Dynamics 365 App for Outlook is the only client that can track from Outlook for MAC.
 
 ## To push the app to users
 * Go to Settings > Dynamics 365 App for Outlook.
