@@ -44,6 +44,8 @@ Interesting links I've found lately.
 
 - [Turbocharge your model-driven apps by transitioning away from synchronous requests](https://powerapps.microsoft.com/en-us/blog/turbocharge-your-model-driven-apps-by-transitioning-away-from-synchronous-requests/) : It is great to handle your server requests asynchronously, but making 10 calls to the servers to see if a user has a role is bad design. 
 
+- [2020 release wave 1 plan](https://docs.microsoft.com/en-us/dynamics365-release-plan/2020wave1/) : Have a look at some of the new features available on the spring release for the Dynamics and Office 365 platform. 
+
 # CDS
 
 - [Plugin Registration Tool for XrmToolBox new filter](https://www.linkedin.com/posts/rappen_xrmtoolbox-ugcPost-6659196750772998144-Loic/) : Now, you can filter to see only the un-managed assemblies. 
