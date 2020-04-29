@@ -15,7 +15,7 @@ Find me in [LinkedIn](https://www.linkedin.com/in/cristhianfernandez")
 
 # My Timeline
 
-See some of the events that took place during my personal and proffessional career. 
+See some of the events that took place during my personal and professional career. 
 
 - Today
 - May 2019: Promoted to Team Leader
@@ -34,3 +34,8 @@ See some of the events that took place during my personal and proffessional care
 - Sep 1999: Moved to Spain
 - Dec 1998: Finished Secondary School
 - Feb 1982: A geek is born
+
+
+# Achievements
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="55943054-0adb-43dd-a758-f28dbf4c726a" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
