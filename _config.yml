@@ -90,6 +90,9 @@ include:
 exclude:
 ignore:
 
+# comments
+disqus_shortname: 'crisfervil'
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -108,6 +111,9 @@ theme_config:
     Archives: archives/
     About: about/me.html
   rss: /atom.xml
+
+  # Miscellaneous
+  google_analytics: 'UA-164934250-1'
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
