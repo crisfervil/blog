@@ -2,6 +2,7 @@
 title: Interesting links 02
 date: 2020-04-18 13:41:59
 tags:
+- linklist
 ---
 
 {% asset_img banner.png Post Banner %}
@@ -22,7 +23,7 @@ Interesting links I've found lately.
 <!-- more -->
 
 
-- [Quarantine work is not Remote work](https://www.hanselman.com/blog/QuarantineWorkIsNotRemoteWork.aspx): Scott Hanselman. If you're new to Remote Work and you're feeling some kind of way, I want to say this as an expert in remote working - This thing we are doing now isn't remote work.
+- [Quarantine work is not Remote work](https://www.hanselman.com/blog/QuarantineWorkIsNotRemoteWork.aspx): [Scott Hanselman](https://www.hanselman.com/about/). If you're new to Remote Work and you're feeling some kind of way, I want to say this as an expert in remote working - This thing we are doing now isn't remote work.
 
 
 
