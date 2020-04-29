@@ -1,5 +1,5 @@
 # Blog
-This is my professional blog, where I write about my experiencies in software development. 
+This is my professional blog, where I write about my experiences in software development. 
 
 You can visit it in [https://blog.crisfervil.com](https://blog.crisfervil.com)
 
@@ -7,10 +7,10 @@ You can visit it in [https://blog.crisfervil.com](https://blog.crisfervil.com)
 - [x] Add Tags
 - [ ] Fix archive links issue
 - [ ] Add discuss support
-- [ ] Add Google statistics
+- [x] Add Google statistics
 - [x] Add CV
 - [ ] Fix vulnerability issue
 - [ ] Fix the share button
-- [ ] The code is not beign formatted correctly
+- [ ] The code is not being formatted correctly
 - [ ] Write a Top Ten Articles Page
 - [ ] Add twitter link
