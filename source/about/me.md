@@ -24,7 +24,7 @@ See some of the events that took place during my personal and professional caree
 - Mar 2015: Started a job as Senior Consultant
 - Mar 2015: Moved to Ireland
 - Dec 2014: Promoted to Senior Consultant
-- Jan 2013: Won the Delivery Excellence Award in my company
+- Jan 2013: Won a Delivery Excellence Award
 - Apr 2012: Started working as CRM Consultant
 - Oct 2006: Started working as Developer Consultant
 - Sep 2001: Started a position as Senior Developer
@@ -39,3 +39,20 @@ See some of the events that took place during my personal and professional caree
 # Achievements
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="55943054-0adb-43dd-a758-f28dbf4c726a" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
+
+
+# Resources
+
+Interesting links, tools or resources that I'd like to share.
+
+## Sites
+
+- [Martin Fowler](https://martinfowler.com/) : A must read if you want to learn about software architecture.
+
+## Tools
+
+- [KanbanFlow](https://kanbanflow.com/) : Awesome tool online to organize your tasks on a Kanban board. It includes a Pomodoro timer. I've been using this tools every day for years now. Very recommendable. 
+
+## Multimedia
+
+  - [Unsplash](https://unsplash.com/) : Fantastic source of free usable images.  
