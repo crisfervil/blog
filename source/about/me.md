@@ -41,6 +41,12 @@ See some of the events that took place during my personal and professional caree
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="55943054-0adb-43dd-a758-f28dbf4c726a" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
 
 
+# Slides
+
+Some slides I prepared for talks or other events. 
+
+<iframe src="https://www.slideshare.net/CristhianFernandez2/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
 # Resources
 
 Interesting links, tools or resources that I'd like to share.
@@ -53,6 +59,6 @@ Interesting links, tools or resources that I'd like to share.
 
 - [KanbanFlow](https://kanbanflow.com/) : Awesome tool online to organize your tasks on a Kanban board. It includes a Pomodoro timer. I've been using this tools every day for years now. Very recommendable. 
 
-## Multimedia
+## Media
 
   - [Unsplash](https://unsplash.com/) : Fantastic source of free usable images.  
