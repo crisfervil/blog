@@ -7,7 +7,7 @@ title: Cristhian Fernandez
 subtitle: 'Professional Blog'
 description: 'Blog about my experiences in software development'
 keywords:
-author: 'Cristhian Fernandez'
+author: Cristhian Fernandez
 language: en
 timezone: ''
 
@@ -100,7 +100,7 @@ theme: bootstrap-blog
 
 theme_config: 
   about_widget_content: >
-    <p>This is where I write about my experiences in software development</p>
+    <p>Here is where I write about my experiences in software development</p>
     <p><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/cristhianfernandez">Linkedin</a></p>
     <p><i class="fa fa-github"><a href="https://github.com/crisfervil"></i>Github</a></p>
 
