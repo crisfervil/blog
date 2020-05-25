@@ -48,3 +48,4 @@ Interesting links I've found lately.
 - [Announcing Tasks in Teams](https://techcommunity.microsoft.com/t5/planner-blog/announcing-tasks-in-teams-a-coherent-task-management-experience/ba-p/969386): New feature available, which combines personal tasks with team tasks and even office document tasks. Take a look!
 
 - [Microsoft Lists](https://youtu.be/plshQSoe_OY) : Interesting to see how simply and yet powerful it is. This new application in Office 365 allows you to easily created data structures with some editing and visualization features. Is like a mini-version of Power Apps on its own.  
+
